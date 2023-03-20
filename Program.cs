@@ -8,16 +8,25 @@ Console.WriteLine("Вторая цифра этого числа это "+string
 
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+// сделать проверку по трай/пас
 
 Console.Write("Введите число: ");
-int RandomNumber = Convert.ToInt32(Console.ReadLine());
-string RandomNumberString = Convert.ToString(RandomNumber);
-if (RandomNumberString.Length > 2){
-  Console.WriteLine("третья цифра это " + RandomNumberString[2]);
-}
-else {
-  Console.WriteLine("третьей цифры нет");
-}
+int n = int.Parse(Console.ReadLine());
+int k = (int)Math.Log10(n)-2;
+Console.WriteLine(k < 0 ? "No such digit" : (n % (int)Math.Pow(10, k + 1) / (int)Math.Pow(10, k)).ToString());
+Console.ReadLine();
+
+// не получается пихнуть в код ниже проверку по double.TryParse() или по int.TryParse() =``(((( 
+
+// Console.Write("Введите число: ");
+// int RandomNumber = Convert.ToInt32(Console.ReadLine());
+// string RandomNumberString = Convert.ToString(RandomNumber);
+// if (RandomNumberString.Length > 2){
+//   Console.WriteLine("третья цифра это " + RandomNumberString[2]);
+// }
+// else {
+//   Console.WriteLine("третьей цифры нет");
+// }
 
 //Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
